@@ -2,7 +2,7 @@ import argparse
 import glob
 import os
 import random
-
+import shutil
 import numpy as np
 
 from utils import get_module_logger
@@ -17,7 +17,23 @@ def split(source, destination):
         - source [str]: source data directory, contains the processed tf records
         - destination [str]: destination data directory, contains 3 sub folders: train / val / test
     """
-    # TODO: Implement function
+    # create folders
+    sub_folders = ['train', 'val', 'test']
+    for sub_folder in sub_folders:
+        os.makedirs(os.path.join(destination, sub_folder), exist_ok=True)
+    # split data (since test data is already provided in workspace, will only split train/val here)
+    data_dir = os.path.join(source, 'training_and_validation')
+    files = os.listdir(data_dir)
+    random.shuffle(files)
+    n = len(files)
+    train_val_split_ratio = 0.2
+    n_train = int(n * (1 - train_val_split_ratio))
+    train_files = files[:n_train]
+    val_files = files[n_train:]
+    for f in train_files:
+        shutil.copy(os.path.join(data_dir, f), os.path.join(destination, 'train'))
+    for f in val_files:
+        shutil.copy(os.path.join(data_dir, f), os.path.join(destination, 'val'))
 
 
 if __name__ == "__main__":
