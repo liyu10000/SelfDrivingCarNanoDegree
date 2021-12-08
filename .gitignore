@@ -1,1 +1,7 @@
-Waymo_Open_Dataset/
+*__pycache__
+*.ipynb_checkpoints/
+*.deb
+*.tar
+
+models/
+module1_computer_vision/object_detection_project/data/
