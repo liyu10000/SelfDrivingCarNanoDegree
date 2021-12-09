@@ -158,3 +158,26 @@ This section should detail the results of the reference experiment. It should in
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+
+
+## My Commands
+Generate config file
+```
+python edit_config.py --train_dir data/waymo/train --eval_dir data/waymo/val --batch_size 2 --checkpoint experiments/pretrained_model/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map experiments/label_map.pbtxt
+```
+
+Training
+```
+python experiments/model_main_tf2.py --model_dir=experiments/reference/ --pipeline_config_path=experiments/reference/pipeline_new.config
+
+```
+
+Evaluation
+```
+python experiments/model_main_tf2.py --model_dir=experiments/reference/ --pipeline_config_path=experiments/reference/pipeline_new.config --checkpoint_dir=experiments/reference/
+
+```
+
+
+## My Experiments
+1. op1: add data aug as inspired by config mentioned in this [thread](https://knowledge.udacity.com/questions/721635).
