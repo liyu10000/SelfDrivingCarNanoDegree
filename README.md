@@ -1,6 +1,9 @@
 ## Self-Driving Car Nano-Degree on Udacity
 
-gcloud project: waymo-open-dataset-sdc
+Gcloud project: waymo-open-dataset-sdc
+
+Link to P1 [object detection project](https://github.com/liyu10000/SelfDrivingCarNanoDegree/tree/main/module1_computer_vision/object_detection_project).
+
 
 ### Useful links:
 [Waymo Open Dataset](https://waymo.com/open/data/perception/#) | 
