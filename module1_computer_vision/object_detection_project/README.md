@@ -169,15 +169,23 @@ python edit_config.py --train_dir data/waymo/train --eval_dir data/waymo/val --b
 Training
 ```
 python experiments/model_main_tf2.py --model_dir=experiments/reference/ --pipeline_config_path=experiments/reference/pipeline_new.config
-
 ```
 
 Evaluation
 ```
 python experiments/model_main_tf2.py --model_dir=experiments/reference/ --pipeline_config_path=experiments/reference/pipeline_new.config --checkpoint_dir=experiments/reference/
-
 ```
 
+Export model
+```
+python experiments/exporter_main_v2.py --input_type image_tensor --pipeline_config_path experiments/reference/pipeline_new.config --trained_checkpoint_dir experiments/reference/ --output_directory experiments/reference/exported/
+```
+
+Create animation
+```
+python inference_video.py --labelmap_path label_map.pbtxt --model_path experiments/reference/exported/saved_model --tf_record_path data/waymo/test/segment-12012663867578114640_820_000_840_000_with_camera_labels.tfrecord --config_path experiments/reference/pipeline_new.config --output_path experiments/reference/plots/segment-12012663867578114640_820_000_840_000_with_camera_labels.gif
+```
 
 ## My Experiments
 1. op1: add data aug as inspired by config mentioned in this [thread](https://knowledge.udacity.com/questions/721635).
+2. op2: use EfficientDet D1 from [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md).
