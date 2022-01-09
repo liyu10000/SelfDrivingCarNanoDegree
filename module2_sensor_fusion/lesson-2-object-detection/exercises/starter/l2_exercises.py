@@ -32,6 +32,7 @@ def plot_precision_recall():
     
     # Please create a 2d scatter plot of all precision/recall pairs 
 
+    pass
 
 
 # Exercise C2-3-4 : Compute precision and recall
@@ -89,3 +90,4 @@ def pcl_to_bev(lidar_pcl, configs, vis=True):
     #            break
     #    cv2.destroyAllWindows()
 
+    pass

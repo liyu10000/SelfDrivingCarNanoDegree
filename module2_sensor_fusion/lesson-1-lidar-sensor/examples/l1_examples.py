@@ -110,8 +110,8 @@ def vis_range_channel(frame, lidar_name):
     ri_center = int(img_range.shape[1]/2)
     img_range = img_range[:,ri_center-deg45:ri_center+deg45]
 
-    print('max. val = ' + str(round(np.amax(img_range[:,:]),2)))
-    print('min. val = ' + str(round(np.amin(img_range[:,:]),2)))
+    print('max. range val = ' + str(round(np.amax(img_range[:,:]),2)))
+    print('min. range val = ' + str(round(np.amin(img_range[:,:]),2)))
 
     cv2.imshow('range_image', img_range)
     cv2.waitKey(0)
@@ -130,8 +130,9 @@ def get_max_min_range(frame, lidar_name):
 
 def print_range_image_shape(frame, lidar_name):
 
+    # last dimension: [range, intensity, elongation, is_in_no_label_zone]
     ri = load_range_image(frame, lidar_name)
-    print(ri.shape)
+    print('range image shape:', ri.shape)
 
     # extract range data and convert to 8 bit
     #ri_range = ri[:,:,0]
@@ -153,7 +154,7 @@ def print_vfov_lidar(frame, lidar_name):
     vfov_rad = calib_lidar.beam_inclination_max - calib_lidar.beam_inclination_min
 
     # compute and print vfov in degrees
-    print(vfov_rad*180/np.pi)
+    print('angle of vertical field of view:', vfov_rad*180/np.pi)
 
 
 # Example C1-3-2 : display camera image
