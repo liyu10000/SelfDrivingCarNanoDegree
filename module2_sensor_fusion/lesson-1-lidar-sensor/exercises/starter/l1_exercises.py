@@ -45,8 +45,8 @@ def vis_intensity_channel(frame, lidar_name):
     ri_center = int(img_intensity.shape[1]/2)
     img_intensity = img_intensity[:,ri_center-deg45:ri_center+deg45]
 
-    print('max. val = ' + str(round(np.amax(img_intensity[:,:]),2)))
-    print('min. val = ' + str(round(np.amin(img_intensity[:,:]),2)))
+    print('max. intensity val = ' + str(round(np.amax(img_intensity[:,:]),2)))
+    print('min. intensity val = ' + str(round(np.amin(img_intensity[:,:]),2)))
 
     cv2.imshow('intensity_image', img_intensity)
     cv2.waitKey(0)

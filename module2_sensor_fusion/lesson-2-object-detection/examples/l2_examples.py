@@ -100,11 +100,12 @@ def crop_pcl(lidar_pcl, configs, vis=True):
                     (lidar_pcl[:, 1] >= configs.lim_y[0]) & (lidar_pcl[:, 1] <= configs.lim_y[1]) &
                     (lidar_pcl[:, 2] >= configs.lim_z[0]) & (lidar_pcl[:, 2] <= configs.lim_z[1]))
     lidar_pcl = lidar_pcl[mask]
+    print('point cloud shape after mask:', lidar_pcl.shape)
 
     # visualize point-cloud
     if vis:
         pcd = o3d.geometry.PointCloud()
-        pcd.points = o3d.utility.Vector3dVector(lidar_pcl)
+        pcd.points = o3d.utility.Vector3dVector(lidar_pcl[:,:3])
         o3d.visualization.draw_geometries([pcd])
 
     return lidar_pcl

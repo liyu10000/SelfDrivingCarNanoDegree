@@ -88,7 +88,8 @@ def range_image_to_point_cloud(frame, lidar_name, vis=True):
         o3d.visualization.draw_geometries([pcd])
 
     # stack lidar point intensity as last column
-    pcl_full = np.column_stack((pcl, ri[idx_range, 1]))    
+    pcl_full = np.column_stack((pcl, ri[idx_range, 1]))
+    print('point cloud shape:', pcl_full.shape)
 
     return pcl_full    
 
