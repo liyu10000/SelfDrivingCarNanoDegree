@@ -3,7 +3,9 @@
 Gcloud project: waymo-open-dataset-sdc
 
 ### Project links:
-Link to [P1 Object Detection Project](https://github.com/liyu10000/SelfDrivingCarNanoDegree/tree/main/module1_computer_vision/object_detection_project).
+Link to [P1 Object Detection Project](https://github.com/liyu10000/SelfDrivingCarNanoDegree/tree/main/module1_computer_vision/object_detection_project)
+
+Link to [P2 Sensor Fusion Project](https://github.com/liyu10000/SelfDrivingCarNanoDegree/tree/main/module2_sensor_fusion/sensor_fusion_project)
 
 
 ### Useful links:
