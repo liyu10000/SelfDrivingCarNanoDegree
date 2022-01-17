@@ -2,8 +2,9 @@
 *.ipynb_checkpoints/
 *.deb
 *.tar
+*.pth
 
-models/
 module1_computer_vision/object_detection_project/data/
 module1_computer_vision/object_detection_project/experiments/
 module2_sensor_fusion/dataset/
+module2_sensor_fusion/sensor_fusion_project/results/
